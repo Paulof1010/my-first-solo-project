@@ -1,6 +1,7 @@
 package main;
 
 import entity.Player;
+import tile.TileManager;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,6 +30,7 @@ public class GamePanel extends JPanel implements Runnable{
 
     //FPS
     int fps = 60;
+    TileManager tileManager = new TileManager(this);
     KeyHandler keyHandler = new KeyHandler();
     Thread gameThread; // Starts our game 'clock', we need to implement 'Runnable' in order to use the Thread class
     Player player = new Player(this, keyHandler);
@@ -127,6 +129,8 @@ public class GamePanel extends JPanel implements Runnable{
         super.paintComponent(g); // g is our 'paint brush'
 
         Graphics2D g2 = (Graphics2D)g; // For more functionality
+
+        tileManager.draw(g2);
 
         player.draw(g2);
 
