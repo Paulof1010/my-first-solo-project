@@ -54,18 +54,21 @@ public class Player extends Entity{
             if (keyHandler.upPressed) {
                 direction = "up";
                 y -= speed;
-            } else if (keyHandler.downPressed) {
+            }
+            if (keyHandler.downPressed) {
                 direction = "down";
                 y += speed;
-            } else if (keyHandler.leftPressed) {
+            }
+            if (keyHandler.leftPressed) {
                 direction = "left";
                 x -= speed;
-            } else if (keyHandler.rightPressed) {
+            }
+            if (keyHandler.rightPressed) {
                 direction = "right";
                 x += speed;
             }
-
             spriteCounter++;
+
             if (spriteCounter > 15) {
                 if (spriteNum == 1) {
                     spriteNum = 2;
