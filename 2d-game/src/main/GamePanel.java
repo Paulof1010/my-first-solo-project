@@ -33,11 +33,6 @@ public class GamePanel extends JPanel implements Runnable{
     Thread gameThread; // Starts our game 'clock', we need to implement 'Runnable' in order to use the Thread class
     Player player = new Player(this, keyHandler);
 
-    // set player default positions
-    int playerX = 100;
-    int playerY = 100;
-    int playerSpeed = 4;
-
     public void startGameThread() {
 
         gameThread = new Thread(this);
